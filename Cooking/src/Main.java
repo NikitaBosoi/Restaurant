@@ -3,7 +3,7 @@ public class Main {
     static Customers customers = new Customers();
     static Pears pears = new Pears();
 
-    public static void  main(String args[]) {
+    public static void  main(String[] args) {
         int pearsCount = 5;
         int costumersCounter = customers.generateCustomersCount();
 
