@@ -1,10 +1,11 @@
-import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Customers {
 
+    // генерируется рандомное количество посетителей
+
     public int generateCustomersCount(){
-        Random random = new Random();
-        int costumersCount = random.nextInt(16);
+        int costumersCount = ThreadLocalRandom.current().nextInt(1, 16);
         return costumersCount;
     }
 }
