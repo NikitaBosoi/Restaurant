@@ -6,6 +6,7 @@ public class Pears {
     int indexOfStopPosition = 0;
 
     Random random = new Random();
+    CustomersName customersName = new CustomersName();
 
     String[] menu = {
             "Шарлотка грушевая",
@@ -53,13 +54,17 @@ public class Pears {
 
     public int cooking(int pearsCount){
         newPearsCountAfterCooking = pearsCount;
-        int position = random.nextInt(10);
+        int position = random.nextInt(9);
+
+
+        int pearsGrabber = ThreadLocalRandom.current().nextInt(1, 4);
+        String customerName = customersName.firstName[random.nextInt(customersName.firstName.length)] + " " + customersName.lastName[random.nextInt(customersName.lastName.length)];
+        System.out.println(customerName + " выбирает " + menu[position]);
         if(position == indexOfStopPosition){
             System.out.println("Извините, блюдо в стоп-листе. Выберете другое блюдо");
             position += 1;
+            System.out.println(customerName + " выбирает " + menu[position]);
         }
-        int pearsGrabber = ThreadLocalRandom.current().nextInt(1, 4);
-        System.out.println("Жора Обжоркин выбирает " + menu[position]);
         System.out.println("Кол-во груш, которое уйдет на приготовление - " + pearsGrabber);
         System.out.println("Готовим " + menu[position]);
         newPearsCountAfterCooking -= pearsGrabber;
